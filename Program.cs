@@ -20,7 +20,7 @@
 //    Console.WriteLine($"Оценка принята: {grade}");
 //    count++;
 //    grade = int.Parse(Console.ReadLine());
-   
+
 // }
 // Console.WriteLine("Ввод завершён");
 // Console.WriteLine($"Количество введенных оценок {count}");
@@ -50,21 +50,52 @@
 
 
 //Шаг 4
-string correctPassword = "qwerty123";
-int count4 = 0;
-while (true)
+// using System.Data.Common;
+
+// string correctPassword = "qwerty123";
+// int count4 = 0;
+
+// while (true)
+// {
+//    Console.Write("Введите пароль от личного кабинета: ");
+//    string password = Console.ReadLine();
+
+//    if (password == correctPassword)
+//    {
+//       Console.WriteLine("Доступ разрешён");
+//       Console.WriteLine($"Количество неудачных попыток: {count4}");
+//       break;
+//    }
+
+//    Console.WriteLine("Неверный пароль, попробуйте снова");
+//    count4++;
+// }
+//Шаг 5
+// string answer;
+// do
+// {
+//    Console.Write("Введите дату посещения (например, 01.09): ");
+//    string date = Console.ReadLine();
+//    Console.WriteLine($"Запись добавлена: {date}");
+
+//    Console.Write("Добавить еще одну запись? (да/нет): ");
+//    answer = Console.ReadLine();
+// } while (answer == "да");
+
+// Console.WriteLine("Дневник сохранен");
+
+
+//Сам. задания
+//Б
+Console.WriteLine("Введите имена учеников, для завершения введите 'конец'");
+string grade6 = Console.ReadLine();
+
+int count6 = 0;
+
+while (grade6 != "конец")
 {
-   Console.Write("Введите пароль от личного кабинета:");
-   string password = Console.ReadLine();
-
-   if (password == correctPassword)
-   {
-      Console.WriteLine("Доступ разрешён");
-      Console.WriteLine($"Неудачных попыток: {count4}");
-      break;
-      
-   }
-
-   Console.WriteLine("Неверный пароль, попробуйте снова");
-   count4++;
+   Console.WriteLine($"Имя: {grade6}");
+   count6++;
+   
 }
+Console.WriteLine($"Количество введенных имен {count6}");
