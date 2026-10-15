@@ -27,33 +27,33 @@
 
 
 //Шаг 3
-// int sum = 0;
-// int count3 = 0;
+int sum = 0;
+int count3 = 0;
 
-// Console.WriteLine("Вводите оценки, для завершения введите -1:");
-// int grade3 = int.Parse(Console.ReadLine());
-// int max = grade3;
+Console.WriteLine("Вводите оценки, для завершения введите -1:");
+int grade3 = int.Parse(Console.ReadLine());
+int max = grade3;
 
-// while (grade3 != -1)
-// {
-//    sum += grade3;
-//    count3++;
+while (grade3 != -1)
+{
+   sum += grade3;
+   count3++;
 
-//    if (grade3>max){
-//       max = grade3;
-//    }
-//    grade3 = int.Parse(Console.ReadLine());
-// }
+   if (grade3>max){
+      max = grade3;
+   }
+   grade3 = int.Parse(Console.ReadLine());
+}
 
-// if (count3 > 0)
-// {
-//    Console.WriteLine($"Средний балл: {(double)sum / count3}");
-//    Console.WriteLine($"Наибольшая оценка: {max}");
-// }
-// else
-// {
-//    Console.WriteLine("Оценок не было введено");
-// }
+if (count3 > 0)
+{
+   Console.WriteLine($"Средний балл: {(double)sum / count3}");
+   Console.WriteLine($"Наибольшая оценка: {max}");
+}
+else
+{
+   Console.WriteLine("Оценок не было введено");
+}
 
 
 //Шаг 4
@@ -120,16 +120,45 @@
 
 
 
-Console.Write("Введите свою фамилию: ");
-string surname = Console.ReadLine()!.Trim();
-if (string.IsNullOrEmpty(surname)) {
-Console.WriteLine("Фамилия не введена. Завершение работы.");
-return;
-}
-Random rnd = new(surname.GetHashCode() + DateTime.Now.DayOfYear);
-var assigned = Enumerable.Range(1, 10)
-.OrderBy(_ => rnd.Next())
-.Take(2)
-.OrderBy(x => x)
-.ToList();
-Console.WriteLine($"Задачи: №{assigned[0]} и №{assigned[1]}");
+// Console.Write("Введите свою фамилию: ");
+// string surname = Console.ReadLine()!.Trim();
+// if (string.IsNullOrEmpty(surname)) {
+// Console.WriteLine("Фамилия не введена. Завершение работы.");
+// return;
+// }
+// Random rnd = new(surname.GetHashCode() + DateTime.Now.DayOfYear);
+// var assigned = Enumerable.Range(1, 10)
+// .OrderBy(_ => rnd.Next())
+// .Take(2)
+// .OrderBy(x => x)
+// .ToList();
+// Console.WriteLine($"Задачи: №{assigned[0]} и №{assigned[1]}");
+
+
+//Инд. вариант
+//5
+// string code = "1234";\
+// while (true)
+// {
+//     Console.Write("Введите код домофона: ");
+//     string code1 = Console.ReadLine();
+//     if (code1 == code)
+//     {
+//         break;
+//     }
+//     Console.WriteLine("Код неверный.");
+// }
+// Console.WriteLine("Дверь открыта");
+
+
+
+// int number = int.Parse(Console.ReadLine());
+
+// int count = 0;
+
+// while (number != 0)
+// {
+//     number = number / 10;
+//     count = count + 1;
+// }
+// Console.WriteLine($"Количество цифр:{count} ");
