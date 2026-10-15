@@ -1,6 +1,6 @@
 ﻿//Шаг 1
-// int lessonNumber = 5;
 // int totalLessons = 5;
+// int lessonNumber = totalLessons;
 
 // while (lessonNumber >= 1)
 // {
@@ -32,16 +32,23 @@
 
 // Console.WriteLine("Вводите оценки, для завершения введите -1:");
 // int grade3 = int.Parse(Console.ReadLine());
+// int max = grade3;
+
 // while (grade3 != -1)
 // {
 //    sum += grade3;
 //    count3++;
+
+//    if (grade3>max){
+//       max = grade3;
+//    }
 //    grade3 = int.Parse(Console.ReadLine());
 // }
 
 // if (count3 > 0)
 // {
 //    Console.WriteLine($"Средний балл: {(double)sum / count3}");
+//    Console.WriteLine($"Наибольшая оценка: {max}");
 // }
 // else
 // {
@@ -67,8 +74,8 @@
 //       break;
 //    }
 
-//    Console.WriteLine("Неверный пароль, попробуйте снова");
 //    count4++;
+//    Console.WriteLine("Неверный пароль, попробуйте снова");
 // }
 //Шаг 5
 // string answer;
@@ -87,15 +94,42 @@
 
 //Сам. задания
 //Б
-Console.WriteLine("Введите имена учеников, для завершения введите 'конец'");
-string grade6 = Console.ReadLine();
+// Console.WriteLine("Введите имена учеников, для завершения введите 'конец'");
+// string grade6 = Console.ReadLine();
 
-int count6 = 0;
+// int count6 = 0;
 
-while (grade6 != "конец")
-{
-   Console.WriteLine($"Имя: {grade6}");
-   count6++;
-   
+// while (grade6 != "конец")
+// {
+//    Console.WriteLine($"Имя: {grade6}");
+//    count6 = count6 + 1;
+//    grade6 = Console.ReadLine();
+// }
+// Console.WriteLine($"Количество введенных имен: {count6}");
+// //В
+// int sum7 = 0;
+// Console.WriteLine("Вводите количество страниц (для завершения введите -1):");
+// int pages7 = int.Parse(Console.ReadLine());
+
+// while (pages != -1){
+//    sum7 = sum7 + pages7;
+
+//    pages7 = int.Parse(Console.ReadLine());
+// }
+// Console.WriteLine($"Общее количество прочитанных страниц: {sum7}");
+
+
+
+Console.Write("Введите свою фамилию: ");
+string surname = Console.ReadLine()!.Trim();
+if (string.IsNullOrEmpty(surname)) {
+Console.WriteLine("Фамилия не введена. Завершение работы.");
+return;
 }
-Console.WriteLine($"Количество введенных имен {count6}");
+Random rnd = new(surname.GetHashCode() + DateTime.Now.DayOfYear);
+var assigned = Enumerable.Range(1, 10)
+.OrderBy(_ => rnd.Next())
+.Take(2)
+.OrderBy(x => x)
+.ToList();
+Console.WriteLine($"Задачи: №{assigned[0]} и №{assigned[1]}");
